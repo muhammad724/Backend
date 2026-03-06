@@ -102,6 +102,12 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+// export app for serverless environments (e.g. Vercel) or testing
+export default app;
+
+// listen when running locally (node index.js or start script)
+if (process.env.RUN_LOCAL === 'true' || process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  });
+}

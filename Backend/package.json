@@ -5,8 +5,9 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node index.js",
+    "dev": "RUN_LOCAL=true node --watch index.js",
+    "vercel-build": "echo 'build step not required for pure Node server'"
   },
   "dependencies": {
     "@google/genai": "latest",
