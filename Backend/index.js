@@ -1,4 +1,4 @@
-// entrypoint for local development
+
 import app from './server.js';
 
 const PORT = process.env.PORT || 5000;
